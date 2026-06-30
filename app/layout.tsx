@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NimbusLink Fiber & Telecom — Fast, Reliable, High-Speed Internet",
+  title: "NimbusLink — Fast, Reliable & High-Speed Internet Solutions",
   description:
-    "NimbusLink provides high-speed fiber broadband, home internet, business internet and telecom infrastructure with professional installation and fast customer support.",
+    "NimbusLink provides high-speed fiber broadband, home internet, business internet and telecom infrastructure in Amritsar, Punjab.",
+  openGraph: {
+    title: "NimbusLink — High-Speed Fiber Internet",
+    description:
+      "We design, build and operate broadband and fiber networks for homes, businesses and communities.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
