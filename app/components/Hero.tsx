@@ -1,32 +1,34 @@
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
+// const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
+
+import Roundable from "./Roundable";
 
 export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-grid" />
       <div className="hero-bg">
-        <HeroScene />
+        {/* <HeroScene /> */}
       </div>
       <div className="hero-overlay" />
       <div className="wrap hero-inner">
         <div className="hero-text">
-          <span className="eyebrow">
+          <span className="eyebrow reveal">
             Telecom Infrastructure &amp; ISP
           </span>
-          <h1>
+          <h1 className="reveal" style={{ transitionDelay: '0.12s' }}>
             Fast, Reliable &amp;{' '}
             <span className="accent">High-Speed Internet</span>{' '}
             Solutions
           </h1>
-          <p className="lede">
+          <p className="lede reveal" style={{ transitionDelay: '0.24s' }}>
             We design, build and operate broadband and fiber networks
             that keep homes, businesses and communities connected —
             backed by professional installation and round-the-clock
             support.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions reveal" style={{ transitionDelay: '0.36s' }}>
             <a href="#contact" className="btn btn-primary">
               Get New Connection
             </a>
@@ -34,7 +36,7 @@ export default function Hero() {
               Contact Us
             </a>
           </div>
-          <div className="hero-stats">
+          <div className="hero-stats reveal" style={{ transitionDelay: '0.48s' }}>
             <div>
               <div className="num">1 Gbps</div>
               <div className="lbl">Max Fiber Speed</div>
@@ -53,7 +55,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="hero-visual">
+        <Roundable className="hero-visual">
           <div className="signal-rings">
             <svg viewBox="0 0 440 440">
               <circle className="ring r1" cx="220" cy="220" r="60"/>
@@ -75,7 +77,7 @@ export default function Hero() {
           </div>
           <div className="node-card n1"><span className="big">10ms</span>LATENCY</div>
           <div className="node-card n2"><span className="big">FTTH</span>FIBER TO HOME</div>
-        </div>
+        </Roundable>
       </div>
     </section>
   );

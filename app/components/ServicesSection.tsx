@@ -12,10 +12,10 @@ export default function ServicesSection() {
           <p>Whether it&apos;s a single household or a multi-floor office, our network is built to deliver the right plan with the right infrastructure.</p>
         </div>
         <div className="svc-grid">
-          {services.map((item) => {
+          {services.map((item, i) => {
             const Icon = getIcon(item.icon);
             return (
-              <Tilt max={10} glare={false} className="svc-card reveal" key={item.num}>
+              <Tilt max={10} glare={false} className="svc-card reveal" key={item.num} style={{ transitionDelay: `${i * 0.35}s` }}>
                 <article>
                   <span className="svc-num">{item.num}</span>
                   <div className="svc-ico">{Icon && <Icon />}</div>

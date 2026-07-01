@@ -31,22 +31,26 @@ export default function CoverageSection() {
       <div className="wrap coverage-inner">
         <Tilt max={14} className="coverage-map reveal" glare={false}>
           <svg viewBox="0 0 360 360">
-            <circle cx="180" cy="180" r="170" fill="none" stroke="rgba(34,211,238,0.18)" strokeWidth="1" />
-            <circle cx="180" cy="180" r="120" fill="none" stroke="rgba(34,211,238,0.18)" strokeWidth="1" />
-            <circle cx="180" cy="180" r="70" fill="none" stroke="rgba(34,211,238,0.25)" strokeWidth="1" />
-            <g stroke="rgba(94,234,212,0.5)" strokeWidth="1.2">
-              <line x1="180" y1="180" x2="90" y2="100" />
-              <line x1="180" y1="180" x2="280" y2="90" />
-              <line x1="180" y1="180" x2="80" y2="260" />
-              <line x1="180" y1="180" x2="270" y2="270" />
-              <line x1="180" y1="180" x2="180" y2="30" />
+            <g className="svg-rings">
+              <circle cx="180" cy="180" r="170" fill="none" stroke="rgba(34,211,238,0.18)" strokeWidth="1" />
+              <circle cx="180" cy="180" r="120" fill="none" stroke="rgba(34,211,238,0.18)" strokeWidth="1" />
+              <circle cx="180" cy="180" r="70" fill="none" stroke="rgba(34,211,238,0.25)" strokeWidth="1" />
             </g>
-            <circle cx="180" cy="180" r="10" fill="#0c1e36" stroke="#22d3ee" strokeWidth="2" />
-            <circle cx="90" cy="100" r="5" fill="#5eead4" />
-            <circle cx="280" cy="90" r="5" fill="#5eead4" />
-            <circle cx="80" cy="260" r="5" fill="#5eead4" />
-            <circle cx="270" cy="270" r="5" fill="#5eead4" />
-            <circle cx="180" cy="30" r="5" fill="#5eead4" />
+            <g className="svg-rotator">
+              <g stroke="rgba(94,234,212,0.5)" strokeWidth="1.2">
+                <line x1="180" y1="180" x2="90" y2="100" />
+                <line x1="180" y1="180" x2="280" y2="90" />
+                <line x1="180" y1="180" x2="80" y2="260" />
+                <line x1="180" y1="180" x2="270" y2="270" />
+                <line x1="180" y1="180" x2="180" y2="30" />
+              </g>
+              <circle cx="90" cy="100" r="5" fill="#5eead4" />
+              <circle cx="280" cy="90" r="5" fill="#5eead4" />
+              <circle cx="80" cy="260" r="5" fill="#5eead4" />
+              <circle cx="270" cy="270" r="5" fill="#5eead4" />
+              <circle cx="180" cy="30" r="5" fill="#5eead4" />
+            </g>
+            <circle className="svg-hub" cx="180" cy="180" r="10" fill="#0c1e36" stroke="#22d3ee" strokeWidth="2" />
           </svg>
         </Tilt>
         <div className="coverage-text reveal">

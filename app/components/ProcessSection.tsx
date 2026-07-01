@@ -12,8 +12,8 @@ export default function ProcessSection() {
         </div>
         <div className="process-rail">
           <div className="process-steps">
-            {processSteps.map((step) => (
-              <div className="step reveal" key={step.n}>
+            {processSteps.map((step, i) => (
+              <div className="step reveal" key={step.n} style={{ transitionDelay: `${i * 0.12}s` }}>
                 <Tilt max={14} glare={false} className="w-[52px] h-[52px]"><div className="step-dot">{step.n}</div></Tilt>
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>

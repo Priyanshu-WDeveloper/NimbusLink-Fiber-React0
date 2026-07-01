@@ -1,17 +1,19 @@
 "use client";
 
-import { useRef, useState, useCallback, type ReactNode } from "react";
+import { useRef, useState, useCallback, type ReactNode, type CSSProperties } from "react";
 
 export default function Tilt({
   children,
   className = "",
   max = 10,
   glare = true,
+  style,
 }: {
   children: ReactNode;
   className?: string;
   max?: number;
   glare?: boolean;
+  style?: CSSProperties;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [t, setT] = useState({ rx: 0, ry: 0, gx: 50, gy: 50, active: false });
@@ -43,9 +45,11 @@ export default function Tilt({
       onMouseLeave={onLeave}
       className={`relative overflow-hidden ${className}`}
       style={{
+        ...style,
         transformStyle: "preserve-3d",
         transform: `perspective(900px) rotateX(${t.rx}deg) rotateY(${t.ry}deg) ${t.active ? "scale(1.02)" : "scale(1)"}`,
-        transition: t.active ? "transform 60ms linear" : "transform 400ms ease",
+        transitionDuration: t.active ? "60ms" : "400ms",
+        transitionTimingFunction: t.active ? "linear" : "ease",
       }}
     >
       {children}

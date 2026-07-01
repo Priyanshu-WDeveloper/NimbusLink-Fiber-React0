@@ -10,11 +10,11 @@ export default function SupportSection() {
           <span className="eyebrow" style={{ color: "var(--blue)" }}>Customer Support</span>
           <h2>Help, whenever the connection needs it</h2>
         </div>
-        <div className="support-grid reveal">
+        <div className="support-grid">
           {support.map((item, i) => {
             const Icon = getIcon(item.icon);
             return (
-              <article className="support-card" key={i}>
+              <article className="support-card reveal" key={i} style={{ transitionDelay: `${i * 0.12}s` }}>
                 <Tilt max={10} glare={false}>
                 <div className="support-ico">{Icon && <Icon />}</div>
                 <h4>{item.title}</h4>

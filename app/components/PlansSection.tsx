@@ -62,6 +62,7 @@ export default function PlansSection() {
             <article
               className={`plan-card reveal${plan.popular ? " is-popular" : ""}`}
               key={`${plan.type}-${i}`}
+              style={{ transitionDelay: `${i * 0.12}s` }}
             >
               <Tilt max={10} glare={false}>
               <div className="plan-label">
