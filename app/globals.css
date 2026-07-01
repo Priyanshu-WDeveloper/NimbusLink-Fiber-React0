@@ -221,7 +221,7 @@ header {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
+  min-width: 100px;
   background: var(--navy-deep);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -241,7 +241,7 @@ header {
 }
 .nav-links .nav-sub a {
   display: block;
-  padding: 10px 24px;
+  padding: 10px 16px;
   white-space: nowrap;
   font-size: 14px;
   line-height: 1.4;
@@ -344,7 +344,7 @@ summary:focus-visible {
   background: linear-gradient(
     90deg,
     rgba(6, 16, 31, 0.65) 0%,
-    rgba(6, 16, 31, 0.50) 50%,
+    rgba(6, 16, 31, 0.5) 50%,
     rgba(6, 16, 31, 0.35) 100%
   );
   pointer-events: none;
@@ -404,7 +404,6 @@ summary:focus-visible {
   letter-spacing: 0.06em;
 }
 
-
 .hero-visual {
   grid-column: 2;
   position: relative;
@@ -440,8 +439,14 @@ summary:focus-visible {
   animation: ring-expand 3.2s ease-out 2.12s infinite;
 }
 @keyframes ring-expand {
-  0% { transform: scale(0.5); opacity: 0.9; }
-  100% { transform: scale(1.4); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
 }
 .hero-visual .node-card {
   position: absolute;
@@ -458,8 +463,13 @@ summary:focus-visible {
   animation-delay: 0.8s;
 }
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .node-card {
@@ -914,23 +924,36 @@ summary:focus-visible {
   animation: rotate-map 30s linear infinite;
 }
 @keyframes rotate-map {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .coverage-map .svg-hub {
   animation: pulse-hub 2s ease-in-out infinite;
 }
 @keyframes pulse-hub {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.15); }
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 .coverage-map .svg-rings circle {
   transform-origin: 180px 180px;
   animation: ring-expand 3.2s ease-out infinite;
 }
-.coverage-map .svg-rings circle:nth-child(2) { animation-delay: 1.06s; }
-.coverage-map .svg-rings circle:nth-child(3) { animation-delay: 2.12s; }
+.coverage-map .svg-rings circle:nth-child(2) {
+  animation-delay: 1.06s;
+}
+.coverage-map .svg-rings circle:nth-child(3) {
+  animation-delay: 2.12s;
+}
 
 .support {
   padding: 96px 0;
@@ -1281,33 +1304,63 @@ footer {
 }
 
 @keyframes about-wave-in {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes about-dot-in {
-  from { opacity: 0; transform: scale(0); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes about-node-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes about-label-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .about-art .svg-waves path {
   animation: about-wave-in 0.7s ease 0.2s both;
 }
-.about-art .svg-waves path:nth-child(2) { animation-delay: 0.32s; }
-.about-art .svg-waves path:nth-child(3) { animation-delay: 0.44s; }
+.about-art .svg-waves path:nth-child(2) {
+  animation-delay: 0.32s;
+}
+.about-art .svg-waves path:nth-child(3) {
+  animation-delay: 0.44s;
+}
 
 .about-art .svg-dots .dot-wrapper {
   animation: about-dot-in 0.5s ease 0.55s both;
 }
-.about-art .svg-dots .dot-wrapper:nth-child(2) { animation-delay: 0.7s; }
-.about-art .svg-dots .dot-wrapper:nth-child(3) { animation-delay: 0.85s; }
+.about-art .svg-dots .dot-wrapper:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.about-art .svg-dots .dot-wrapper:nth-child(3) {
+  animation-delay: 0.85s;
+}
 
 .about-art .svg-node {
   animation: about-node-in 0.7s ease 0.55s both;
@@ -1329,9 +1382,15 @@ footer {
     height: 280px;
     order: -1;
   }
-  .hero-visual .node-card { bottom: 20px; }
-  .hero-visual .n1 { left: 15%; }
-  .hero-visual .n2 { right: 15%; }
+  .hero-visual .node-card {
+    bottom: 20px;
+  }
+  .hero-visual .n1 {
+    left: 15%;
+  }
+  .hero-visual .n2 {
+    right: 15%;
+  }
   .hero-overlay {
     background: linear-gradient(
       90deg,
