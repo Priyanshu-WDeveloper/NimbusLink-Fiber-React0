@@ -11,6 +11,9 @@ export const metadata: Metadata = {
       "We design, build and operate broadband and fiber networks for homes, businesses and communities.",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
